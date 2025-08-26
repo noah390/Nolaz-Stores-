@@ -32,6 +32,7 @@ export function CartSheet() {
     email: user?.email || '',
     amount: getCartTotal() * 100, // Amount in kobo
     publicKey: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY || '',
+    currency: 'NGN',
   };
 
   const initializePayment = usePaystackPayment(config);
@@ -111,7 +112,7 @@ export function CartSheet() {
                     <div className="flex-1">
                         <p className="font-semibold">{item.name}</p>
                         <p className="text-sm text-muted-foreground">
-                        ${item.price.toFixed(2)}
+                        ₦{item.price.toFixed(2)}
                         </p>
                         <div className="mt-2 flex items-center gap-2">
                         <Button
@@ -159,7 +160,7 @@ export function CartSheet() {
                 <Separator />
                 <div className="flex items-center justify-between text-lg font-semibold">
                     <span>Total:</span>
-                    <span>${getCartTotal().toFixed(2)}</span>
+                    <span>₦{getCartTotal().toFixed(2)}</span>
                 </div>
                 <Button onClick={handleCheckout} className="w-full bg-accent text-accent-foreground shadow-lg hover:bg-accent/90">
                     Proceed to Checkout

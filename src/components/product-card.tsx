@@ -70,7 +70,7 @@ export function ProductCard({ product }: { product: Product }) {
             {product.description}
           </CardDescription>
           <p className="mt-4 text-3xl font-bold text-foreground">
-            ${product.price.toFixed(2)}
+            ₦{product.price.toFixed(2)}
           </p>
         </CardContent>
         <CardFooter className="flex flex-col gap-2 p-6 pt-0">

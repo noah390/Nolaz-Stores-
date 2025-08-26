@@ -195,7 +195,7 @@ export default function AdminPage() {
                                 <TableCell>
                                   <Badge variant="outline">{product.category}</Badge>
                                 </TableCell>
-                                <TableCell>${product.price.toFixed(2)}</TableCell>
+                                <TableCell>₦{product.price.toFixed(2)}</TableCell>
                                 <TableCell>{product.stock}</TableCell>
                                 <TableCell>
                                   <Button variant="outline" size="sm" className="mr-2" onClick={() => handleEditClick(product)}>Edit</Button>
@@ -251,7 +251,7 @@ export default function AdminPage() {
                        <CardContent className="flex-grow p-4 pt-0">
                          <h3 className="font-semibold">{product.name}</h3>
                          <p className="text-sm text-muted-foreground">{product.category}</p>
-                         <p className="mt-2 text-lg font-bold">${product.price.toFixed(2)}</p>
+                         <p className="mt-2 text-lg font-bold">₦{product.price.toFixed(2)}</p>
                        </CardContent>
                        <CardFooter className="p-4 pt-0">
                           {isInStore ? (
